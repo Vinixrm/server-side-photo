@@ -1,0 +1,54 @@
+# Criar uma nova sessão fotográfica
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+    "cliente": "Ana Souza",
+    "fotógrafo": "Maria Eduarda A. Miguel Menegassi",
+    "tema": "Casamento",
+    "local": "Parque das Flores",
+    "data": "2025-03-15",
+    "pacote": "Premium",
+    "valor": 1500.00
+}
+
+###
+
+# Listar todas as sessões fotográficas agendadas
+GET http://localhost:3333/sessions
+
+###
+
+# Buscar uma sessão específica por nome do cliente
+GET http://localhost:3333/sessions?search=Ana Souza
+
+###
+
+# Atualizar uma sessão fotográfica existente
+PUT http://localhost:3333/sessions/
+Content-Type: application/json
+
+{
+    "cliente": "Carlos Oliveira",
+    "fotógrafo": "Laurizy Oliveira",
+    "tema": "Aniversário",
+    "local": "Buffet Estrela",
+    "data": "2025-05-20",
+    "pacote": "Básico",
+    "valor": 900.00
+}
+
+###
+
+# Atualizar parcialmente uma sessão (por exemplo, mudar o local)
+PATCH http://localhost:3333/sessions/
+Content-Type: application/json
+
+{
+    "local": "Estúdio Fotográfico Lumière"
+}
+
+###
+
+# Excluir uma sessão fotográfica
+DELETE http://localhost:3333/sessions/
